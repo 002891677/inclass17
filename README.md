@@ -1,16 +1,43 @@
-# inclass17
+InClass17 – Firebase Cloud Messaging Demo
 
-A new Flutter project.
+This project is a simple Flutter app that demonstrates Firebase Cloud Messaging (FCM).
+The app displays the device’s FCM token and shows a list of received notifications.
 
-## Getting Started
+Features
 
-This project is a starting point for a Flutter application.
+Initializes Firebase using firebase_core and firebase_messaging
 
-A few resources to get you started if this is your first Flutter project:
+Retrieves and displays the FCM token
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Receives push notifications while app is in foreground / background
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Distinguishes between:
+
+Regular notifications (type = regular)
+
+Important notifications (type = important)
+
+Shows different dialog styles and card colors for regular vs important messages
+
+How to Run
+flutter pub get
+flutter run
+
+
+Make sure the project is connected to your Firebase project (firebase_options.dart generated via flutterfire configure).
+
+Sending Test Notifications
+
+Go to Firebase Console → Cloud Messaging.
+
+Create a new notification.
+
+Use the FCM token shown in the app as the target.
+
+Under custom data:
+
+For regular notification: type = regular
+
+For important notification: type = important
+
+Send and verify the notification appears in the app list with proper styling.
